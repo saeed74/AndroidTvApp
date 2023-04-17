@@ -50,7 +50,7 @@ class MainFragment : BrowseSupportFragment() {
 
         for (i in 1..3) {
 
-            val gridItemPresenterHeader = HeaderItem(i.toLong(), "موضوع شماره " + i)
+            val gridItemPresenterHeader = HeaderItem(i.toLong(),getCategoryNameById(i))
 
             val gridPresenter = CustomMoviePresenter()
             val gridRowAdapter = ArrayObjectAdapter(gridPresenter)
@@ -76,6 +76,15 @@ class MainFragment : BrowseSupportFragment() {
             5 -> return R.drawable.movie5
         }
         return R.drawable.movie
+    }
+
+    private fun getCategoryNameById(id: Int): String {
+        when (id){
+            1 -> return "فیلم\u200Cهای جدید"
+            2 -> return "سریال\u200Cهای جنایی"
+            3 -> return "فیلم\u200Cهای مستند"
+        }
+        return "unknown subject"
     }
 
     private fun getColor(colorId: Int): Int {
