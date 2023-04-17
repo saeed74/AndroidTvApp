@@ -16,12 +16,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:banner="@drawable/app_icon_your_company">
+        android:banner="@drawable/done_tv_test">
         <activity android:name="com.arianamnesh.donetvtest.ui.MainActivity"
             android:theme="@style/AppTheme.Leanback.CustomTitle"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
