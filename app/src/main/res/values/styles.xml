@@ -15,7 +15,6 @@
     </style>
 
     <style name="AppTheme.Leanback.CustomTitle" parent="Theme.Example.LeanbackBrowse">
-        <item name="browseTitleViewLayout">@layout/titleview</item>
         <item name="browseRowsMarginTop">150dp</item>
     </style>
 

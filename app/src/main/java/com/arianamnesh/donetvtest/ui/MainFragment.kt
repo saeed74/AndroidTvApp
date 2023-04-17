@@ -1,86 +1,39 @@
 package com.arianamnesh.donetvtest.ui;
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.leanback.app.BrowseSupportFragment
-import androidx.leanback.widget.*
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.arianamnesh.donetvtest.R
 import com.arianamnesh.donetvtest.commons.Utils
-import com.arianamnesh.donetvtest.customviews.CustomListRowPresenter
-import com.arianamnesh.donetvtest.customviews.CustomMoviePresenter
-import com.arianamnesh.donetvtest.customviews.CustomRowHeaderPresenter
-import com.arianamnesh.donetvtest.model.Movie
+import com.arianamnesh.donetvtest.databinding.FragmentMainBinding
 
+class MainFragment : Fragment() {
 
-class MainFragment : BrowseSupportFragment() {
+    private var _binding: FragmentMainBinding? = null
+    private val binding get() = _binding!!
 
-    private var _rowsAdapter: ArrayObjectAdapter? = null
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         setupUIElements()
         loadRows()
         setupClickListeners()
+        return binding.root
     }
 
     private fun setupClickListeners() {
-        setOnSearchClickedListener(){
-            Utils().showToast(requireContext(),"Search Button Clicked!")
-        }
-        onItemViewClickedListener = getDefaultItemClickedListener()
-    }
-
-    protected fun getDefaultItemClickedListener(): OnItemViewClickedListener? {
-        return OnItemViewClickedListener { viewHolder, item, viewHolder2, row ->
-            val movieId = (item as Movie).id
-            Utils().showToast(requireContext(),"Movie id: $movieId")
+        binding.searchButton.setOnClickListener {
+            Utils().showToast(requireContext(), "Hi")
         }
     }
 
     private fun setupUIElements() {
-
-        headersState = HEADERS_HIDDEN
-
-        title = "دان\u200Cتی\u200Cوی"
-
-        isHeadersTransitionOnBackEnabled = true
-
-        brandColor = getColor(R.color.fastlane_background)
-
-        setHeaderPresenterSelector(object : PresenterSelector() {
-            override fun getPresenter(o: Any): Presenter {
-                return CustomRowHeaderPresenter()
-            }
-        })
-
+        binding.titleTv.text = "دان\u200Cتی\u200Cوی"
     }
 
     private fun loadRows() {
 
-        val listRowPresenter = CustomListRowPresenter()
-        _rowsAdapter = ArrayObjectAdapter(listRowPresenter)
-
-        for (i in 1..3) {
-
-            val gridItemPresenterHeader = HeaderItem(i.toLong(),getCategoryNameById(i))
-
-            val gridPresenter = CustomMoviePresenter()
-            val gridRowAdapter = ArrayObjectAdapter(gridPresenter)
-
-            for (j in 1..5) {
-                val movieId = (i * 10 + j).toLong()
-                val movie = Movie(movieId, getMovieResById(j))
-                gridRowAdapter.add(movie)
-            }
-
-            (_rowsAdapter as ArrayObjectAdapter).add(ListRow(gridItemPresenterHeader, gridRowAdapter))
-        }
-
-        adapter = _rowsAdapter
     }
 
     private fun getMovieResById(id: Int): Int {
@@ -103,9 +56,9 @@ class MainFragment : BrowseSupportFragment() {
         return "unknown subject"
     }
 
-    private fun getColor(colorId: Int): Int {
-        return resources.getColor(colorId)
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
 
 }
