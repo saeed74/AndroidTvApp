@@ -5,6 +5,7 @@ import android.view.View
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
 import com.arianamnesh.donetvtest.R
+import com.arianamnesh.donetvtest.commons.Utils
 import com.arianamnesh.donetvtest.customviews.CustomListRowPresenter
 import com.arianamnesh.donetvtest.customviews.CustomMoviePresenter
 import com.arianamnesh.donetvtest.customviews.CustomRowHeaderPresenter
@@ -23,6 +24,21 @@ class MainFragment : BrowseSupportFragment() {
         super.onCreate(savedInstanceState)
         setupUIElements()
         loadRows()
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+        setOnSearchClickedListener(){
+            Utils().showToast(requireContext(),"Search Button Clicked!")
+        }
+        onItemViewClickedListener = getDefaultItemClickedListener()
+    }
+
+    protected fun getDefaultItemClickedListener(): OnItemViewClickedListener? {
+        return OnItemViewClickedListener { viewHolder, item, viewHolder2, row ->
+            val movieId = (item as Movie).id
+            Utils().showToast(requireContext(),"Movie id: $movieId")
+        }
     }
 
     private fun setupUIElements() {
