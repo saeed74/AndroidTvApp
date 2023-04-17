@@ -10,7 +10,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.leanback.widget.TitleViewAdapter
 
-class CustomTitleView @JvmOverloads constructor(
+class MyTitleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0) : RelativeLayout(context, attrs, defStyle), TitleViewAdapter.Provider {
@@ -34,7 +34,7 @@ class CustomTitleView @JvmOverloads constructor(
         }
 
         override fun setTitle(titleText: CharSequence?) {
-            this@CustomTitleView.setTitle(titleText)
+            this@MyTitleView.setTitle(titleText)
         }
 
         override fun setBadgeDrawable(drawable: Drawable?) {
