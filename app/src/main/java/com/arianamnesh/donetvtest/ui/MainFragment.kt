@@ -65,7 +65,7 @@ class MainFragment : Fragment(), MoviesAdapter.OnItemClickListener,MoviesAdapter
             val movies = mutableListOf<Movie>()
             for (j in 1..5){
                 val movieId = (i * 10 + j).toLong()
-                val movie = Movie(movieId, getMovieResById(j))
+                val movie = Movie(movieId, getMovieResById(movieId))
                 movies.add(movie)
             }
             val adapter = MoviesAdapter(i,requireContext(),movies)
@@ -97,13 +97,23 @@ class MainFragment : Fragment(), MoviesAdapter.OnItemClickListener,MoviesAdapter
         }
     }
 
-    private fun getMovieResById(id: Int): Int {
-        when (id){
-            1 -> return R.drawable.movie1
-            2 -> return R.drawable.movie2
-            3 -> return R.drawable.movie3
-            4 -> return R.drawable.movie4
-            5 -> return R.drawable.movie5
+    private fun getMovieResById(id: Long): Int {
+        when (id.toInt()){
+            11 -> return R.drawable.movie11
+            12 -> return R.drawable.movie12
+            13 -> return R.drawable.movie13
+            14 -> return R.drawable.movie14
+            15 -> return R.drawable.movie15
+            21 -> return R.drawable.movie21
+            22 -> return R.drawable.movie22
+            23 -> return R.drawable.movie23
+            24 -> return R.drawable.movie24
+            25 -> return R.drawable.movie25
+            31 -> return R.drawable.movie31
+            32 -> return R.drawable.movie32
+            33 -> return R.drawable.movie33
+            34 -> return R.drawable.movie34
+            35 -> return R.drawable.movie35
         }
         return R.drawable.movie
     }
