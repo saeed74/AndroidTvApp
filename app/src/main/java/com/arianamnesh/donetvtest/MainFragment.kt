@@ -1,19 +1,9 @@
 package com.arianamnesh.donetvtest;
 
-import android.graphics.Color;
 import android.os.Bundle
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View
-import android.view.ViewGroup;
-import android.widget.TextView;
-import androidx.leanback.app.BrowseFragment
 import androidx.leanback.app.BrowseSupportFragment
-
 import androidx.leanback.widget.*
-
-private const val GRID_ITEM_WIDTH = 300
-private const val GRID_ITEM_HEIGHT = 200
 
 class MainFragment : BrowseSupportFragment() {
 
@@ -42,10 +32,14 @@ class MainFragment : BrowseSupportFragment() {
     }
 
     private fun loadRows() {
-        _rowsAdapter = ArrayObjectAdapter(ListRowPresenter())
+
+        val listRowPresenter = MyListRowPresenter()
+        _rowsAdapter = ArrayObjectAdapter(listRowPresenter)
 
         for (i in 1..3) {
-            val gridItemPresenterHeader = HeaderItem(i.toLong(), "Grid Item Presenter $i")
+
+
+            val gridItemPresenterHeader = HeaderItem(i.toLong(), "موضوع شماره " + i)
 
             val gridPresenter = CardPresenter()
             val gridRowAdapter = ArrayObjectAdapter(gridPresenter)
@@ -54,8 +48,8 @@ class MainFragment : BrowseSupportFragment() {
                 val movieId = (i * 10 + j).toLong()
                 val movie = Movie(
                     movieId,
-                    "Title $movieId",
-                    "Studio $movieId"
+                    "تیتر $movieId",
+                    "استدیو $movieId"
                 )
                 gridRowAdapter.add(movie)
             }
@@ -70,27 +64,5 @@ class MainFragment : BrowseSupportFragment() {
         return resources.getColor(colorId)
     }
 
-    private class GridItemPresenter : Presenter() {
-        override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
-            val view = TextView(parent.context)
-
-            view.layoutParams = ViewGroup.LayoutParams(GRID_ITEM_WIDTH, GRID_ITEM_HEIGHT)
-            view.isFocusable = true
-            view.isFocusableInTouchMode = true
-            view.setBackgroundColor(Color.BLUE)
-            view.setTextColor(Color.WHITE)
-            view.gravity = Gravity.CENTER
-
-            return ViewHolder(view)
-        }
-
-        override fun onBindViewHolder(viewHolder: ViewHolder, item: Any?) {
-            (viewHolder.view as TextView)?.text = item?.toString()
-        }
-
-        override fun onUnbindViewHolder(viewHolder: ViewHolder) {
-
-        }
-    }
 
 }
