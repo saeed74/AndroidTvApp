@@ -5,6 +5,7 @@ import android.view.View
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
 
+
 class MainFragment : BrowseSupportFragment() {
 
     private var _rowsAdapter: ArrayObjectAdapter? = null
@@ -29,6 +30,13 @@ class MainFragment : BrowseSupportFragment() {
 
         brandColor = getColor(R.color.fastlane_background)
         searchAffordanceColor = getColor(R.color.search_opaque)
+
+        setHeaderPresenterSelector(object : PresenterSelector() {
+            override fun getPresenter(o: Any): Presenter {
+                return MyRowHeaderPresenter()
+            }
+        })
+
     }
 
     private fun loadRows() {
