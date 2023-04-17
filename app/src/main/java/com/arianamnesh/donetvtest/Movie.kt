@@ -1,4 +1,4 @@
-package com.willwolfram.androidtvapptutorial
+package com.arianamnesh.donetvtest
 
 class Movie(id: Long, title: String, studio: String) {
 

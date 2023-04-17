@@ -1,4 +1,4 @@
-package com.willwolfram.androidtvapptutorial
+package com.arianamnesh.donetvtest
 
 import android.content.Context
 import android.graphics.Point
