@@ -2,6 +2,6 @@
 <com.arianamnesh.donetvtest.customviews.CustomTitleView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/browse_title_group"
-        android:padding="16dp"
+        android:padding="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
