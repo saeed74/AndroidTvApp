@@ -21,16 +21,20 @@ class MainFragment : BrowseSupportFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setupUIElements()
         loadRows()
-
     }
 
     private fun setupUIElements() {
 
-        title = "my title!! is here"
-
         headersState = HEADERS_HIDDEN
+
+        title = "سلام"
+
         isHeadersTransitionOnBackEnabled = true
 
         brandColor = getColor(R.color.fastlane_background)
