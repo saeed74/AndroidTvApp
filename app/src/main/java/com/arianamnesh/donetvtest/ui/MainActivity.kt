@@ -1,7 +1,8 @@
-package com.arianamnesh.donetvtest
+package com.arianamnesh.donetvtest.ui
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
+import com.arianamnesh.donetvtest.R
 
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

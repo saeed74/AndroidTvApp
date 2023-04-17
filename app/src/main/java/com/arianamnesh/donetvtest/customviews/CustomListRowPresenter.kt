@@ -1,13 +1,13 @@
-package com.arianamnesh.donetvtest
+package com.arianamnesh.donetvtest.customviews
 
 import android.graphics.Color
 import android.util.TypedValue
-import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.leanback.widget.*
+import com.arianamnesh.donetvtest.R
 
 
-class MyListRowPresenter : ListRowPresenter() {
+class CustomListRowPresenter : ListRowPresenter() {
 
     override fun onBindRowViewHolder(holder: RowPresenter.ViewHolder?, item: Any?) {
         super.onBindRowViewHolder(holder, item)
@@ -16,7 +16,7 @@ class MyListRowPresenter : ListRowPresenter() {
             setTextColor(Color.CYAN)
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 14.5f)
             isAllCaps = true
-            setTypeface(ResourcesCompat.getFont(context, R.font.yekan_bold))
+            typeface = ResourcesCompat.getFont(context, R.font.yekan_bold)
         }
     }
 

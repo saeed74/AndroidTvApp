@@ -1,4 +1,4 @@
-package com.arianamnesh.donetvtest
+package com.arianamnesh.donetvtest.customviews
 
 import android.content.Context
 import android.graphics.Color
@@ -10,8 +10,9 @@ import androidx.leanback.widget.HeaderItem
 import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.Presenter
 import androidx.leanback.widget.RowHeaderPresenter
+import com.arianamnesh.donetvtest.R
 
-class MyRowHeaderPresenter : RowHeaderPresenter() {
+class CustomRowHeaderPresenter : RowHeaderPresenter() {
     private var mUnselectedAlpha = 0f
     override fun onCreateViewHolder(viewGroup: ViewGroup): ViewHolder {
         mUnselectedAlpha = viewGroup.resources
@@ -26,7 +27,7 @@ class MyRowHeaderPresenter : RowHeaderPresenter() {
         val iconHeaderItem: HeaderItem = (o as ListRow).headerItem as HeaderItem
         val rootView = viewHolder.view
         val label = rootView.findViewById<View>(R.id.header_label) as TextView
-        label.setText(iconHeaderItem.getName())
+        label.text = iconHeaderItem.name
         label.setTextColor(Color.RED)
     }
 

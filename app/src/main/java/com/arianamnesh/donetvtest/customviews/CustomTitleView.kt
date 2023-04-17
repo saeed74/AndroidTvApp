@@ -1,4 +1,4 @@
-package com.arianamnesh.donetvtest
+package com.arianamnesh.donetvtest.customviews
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -9,8 +9,9 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.leanback.widget.TitleViewAdapter
+import com.arianamnesh.donetvtest.R
 
-class MyTitleView @JvmOverloads constructor(
+class CustomTitleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0) : RelativeLayout(context, attrs, defStyle), TitleViewAdapter.Provider {
@@ -34,7 +35,7 @@ class MyTitleView @JvmOverloads constructor(
         }
 
         override fun setTitle(titleText: CharSequence?) {
-            this@MyTitleView.setTitle(titleText)
+            this@CustomTitleView.setTitle(titleText)
         }
 
         override fun setBadgeDrawable(drawable: Drawable?) {

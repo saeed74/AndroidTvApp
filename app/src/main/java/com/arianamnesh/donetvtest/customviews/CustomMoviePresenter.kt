@@ -1,16 +1,15 @@
-package com.arianamnesh.donetvtest
+package com.arianamnesh.donetvtest.customviews
 
 import android.content.Context
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.widget.ImageViewCompat
-import androidx.leanback.widget.ImageCardView
 import androidx.leanback.widget.Presenter
+import com.arianamnesh.donetvtest.commons.Utils
+import com.arianamnesh.donetvtest.model.Movie
 
-class MoviePresenter : Presenter() {
+class CustomMoviePresenter : Presenter() {
 
     private val imgWidth = 150 //dp
     private val imgHeight = 200 //dp

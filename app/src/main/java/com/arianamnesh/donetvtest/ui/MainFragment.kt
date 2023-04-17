@@ -1,9 +1,14 @@
-package com.arianamnesh.donetvtest;
+package com.arianamnesh.donetvtest.ui;
 
 import android.os.Bundle
 import android.view.View
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
+import com.arianamnesh.donetvtest.R
+import com.arianamnesh.donetvtest.customviews.CustomListRowPresenter
+import com.arianamnesh.donetvtest.customviews.CustomMoviePresenter
+import com.arianamnesh.donetvtest.customviews.CustomRowHeaderPresenter
+import com.arianamnesh.donetvtest.model.Movie
 
 
 class MainFragment : BrowseSupportFragment() {
@@ -32,7 +37,7 @@ class MainFragment : BrowseSupportFragment() {
 
         setHeaderPresenterSelector(object : PresenterSelector() {
             override fun getPresenter(o: Any): Presenter {
-                return MyRowHeaderPresenter()
+                return CustomRowHeaderPresenter()
             }
         })
 
@@ -40,19 +45,19 @@ class MainFragment : BrowseSupportFragment() {
 
     private fun loadRows() {
 
-        val listRowPresenter = MyListRowPresenter()
+        val listRowPresenter = CustomListRowPresenter()
         _rowsAdapter = ArrayObjectAdapter(listRowPresenter)
 
         for (i in 1..3) {
 
             val gridItemPresenterHeader = HeaderItem(i.toLong(), "موضوع شماره " + i)
 
-            val gridPresenter = MoviePresenter()
+            val gridPresenter = CustomMoviePresenter()
             val gridRowAdapter = ArrayObjectAdapter(gridPresenter)
 
             for (j in 1..5) {
                 val movieId = (i * 10 + j).toLong()
-                val movie = Movie(movieId,R.drawable.movie)
+                val movie = Movie(movieId, R.drawable.movie)
                 gridRowAdapter.add(movie)
             }
 

@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:banner="@drawable/app_icon_your_company">
-        <activity android:name="com.arianamnesh.donetvtest.MainActivity"
+        <activity android:name="com.arianamnesh.donetvtest.ui.MainActivity"
             android:theme="@style/AppTheme.Leanback.CustomTitle"
             android:exported="true">
             <intent-filter>
