@@ -30,7 +30,7 @@ class MainFragment : BrowseSupportFragment() {
 
         title = "my title!! is here"
 
-        headersState = HEADERS_ENABLED
+        headersState = HEADERS_HIDDEN
         isHeadersTransitionOnBackEnabled = true
 
         brandColor = getColor(R.color.fastlane_background)
