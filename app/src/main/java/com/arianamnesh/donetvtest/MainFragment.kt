@@ -29,7 +29,6 @@ class MainFragment : BrowseSupportFragment() {
         isHeadersTransitionOnBackEnabled = true
 
         brandColor = getColor(R.color.fastlane_background)
-        searchAffordanceColor = getColor(R.color.search_opaque)
 
         setHeaderPresenterSelector(object : PresenterSelector() {
             override fun getPresenter(o: Any): Presenter {

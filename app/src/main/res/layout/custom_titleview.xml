@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:transitionGroup="true"
         android:layout_gravity="center_vertical|start"
+        android:background="@drawable/search_background"
         android:layout_marginTop="8dp"
-        android:paddingStart="48dp" />
+        android:layout_marginStart="48dp"/>
 
     <AnalogClock
         android:id="@+id/clock"

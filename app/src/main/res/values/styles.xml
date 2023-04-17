@@ -9,9 +9,9 @@
     <style name="Theme.Example.LeanbackBrowse" parent="Theme.Leanback.Browse">
         <item name="android:windowBackground">@drawable/bg_living_room_wide</item>
         <item name="defaultBrandColor">@color/fastlane_background</item>
-        <item name="defaultSearchColor">@color/search_color</item>
         <item name="defaultSearchIconColor">@color/search_icon_color</item>
-        <item name="defaultSearchBrightColor">@color/search_bright_color</item>
+        <item name="defaultSearchColor">@color/search_btn_color</item>
+        <item name="defaultSearchBrightColor">@color/search_btn_color</item>
     </style>
 
     <style name="AppTheme.Leanback.CustomTitle" parent="Theme.Example.LeanbackBrowse">
