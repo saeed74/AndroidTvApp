@@ -13,8 +13,8 @@ class CustomListRowPresenter : ListRowPresenter() {
         super.onBindRowViewHolder(holder, item)
         val textView = holder?.headerViewHolder?.view?.findViewById<RowHeaderView>(R.id.row_header)
         textView?.run {
-            setTextColor(Color.CYAN)
-            setTextSize(TypedValue.COMPLEX_UNIT_SP, 14.5f)
+            setTextColor(Color.WHITE)
+            setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
             isAllCaps = true
             typeface = ResourcesCompat.getFont(context, R.font.yekan_bold)
         }
