@@ -45,19 +45,14 @@ class MainFragment : BrowseSupportFragment() {
 
         for (i in 1..3) {
 
-
             val gridItemPresenterHeader = HeaderItem(i.toLong(), "موضوع شماره " + i)
 
-            val gridPresenter = CardPresenter()
+            val gridPresenter = MoviePresenter()
             val gridRowAdapter = ArrayObjectAdapter(gridPresenter)
 
             for (j in 1..5) {
                 val movieId = (i * 10 + j).toLong()
-                val movie = Movie(
-                    movieId,
-                    "تیتر $movieId",
-                    "استدیو $movieId"
-                )
+                val movie = Movie(movieId,R.drawable.movie)
                 gridRowAdapter.add(movie)
             }
 

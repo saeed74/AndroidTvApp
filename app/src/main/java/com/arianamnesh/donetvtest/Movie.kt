@@ -1,18 +1,13 @@
 package com.arianamnesh.donetvtest
 
-class Movie(id: Long, title: String, studio: String) {
+class Movie(id: Long, img: Int) {
 
     val id = id
-    val title = title
-    val studio = studio
-
-    private val tag: String = "Movie"
-    val serialVersionUID = 727566175075960653L
+    val img = img
 
     override fun toString(): String {
         return "Movie {" +
                 " 'id': $id," +
-                " 'title': '$title'," +
-                " 'studio': '$studio' }"
+                " 'img': '$img' }"
     }
 }
