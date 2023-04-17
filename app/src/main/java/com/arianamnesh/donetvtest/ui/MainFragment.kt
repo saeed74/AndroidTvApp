@@ -57,7 +57,7 @@ class MainFragment : BrowseSupportFragment() {
 
             for (j in 1..5) {
                 val movieId = (i * 10 + j).toLong()
-                val movie = Movie(movieId, R.drawable.movie)
+                val movie = Movie(movieId, getMovieResById(j))
                 gridRowAdapter.add(movie)
             }
 
@@ -65,6 +65,17 @@ class MainFragment : BrowseSupportFragment() {
         }
 
         adapter = _rowsAdapter
+    }
+
+    private fun getMovieResById(id: Int): Int {
+        when (id){
+            1 -> return R.drawable.movie1
+            2 -> return R.drawable.movie2
+            3 -> return R.drawable.movie3
+            4 -> return R.drawable.movie4
+            5 -> return R.drawable.movie5
+        }
+        return R.drawable.movie
     }
 
     private fun getColor(colorId: Int): Int {

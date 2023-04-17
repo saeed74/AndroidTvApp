@@ -7,7 +7,7 @@
     </style>
 
     <style name="Theme.Example.LeanbackBrowse" parent="Theme.Leanback.Browse">
-        <item name="android:windowBackground">@drawable/bg_living_room_wide</item>
+        <item name="android:windowBackground">@drawable/bg_main</item>
         <item name="defaultBrandColor">@color/fastlane_background</item>
         <item name="defaultSearchIconColor">@color/search_icon_color</item>
         <item name="defaultSearchColor">@color/search_btn_color</item>
