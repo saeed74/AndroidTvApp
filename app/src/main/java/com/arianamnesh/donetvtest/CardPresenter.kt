@@ -10,18 +10,15 @@ import androidx.leanback.widget.Presenter
 class CardPresenter : Presenter() {
     private val cardWidth = 300
     private val cardHeight = 350
-    private val tag = "CardPresenter"
 
     private var context: Context? = null
 
     override fun onCreateViewHolder(parent: ViewGroup?): ViewHolder {
-        Log.d(tag, "onCreateViewHolder")
 
         context = parent?.context
 
         val cardView = ImageCardView(context)
 
-//        cardView.focusable = View.FOCUSABLE
         cardView.isFocusableInTouchMode = true
 
         if (context != null) {
@@ -34,15 +31,14 @@ class CardPresenter : Presenter() {
     }
 
     override fun onBindViewHolder(viewHolder: Presenter.ViewHolder?, item: Any?) {
-        Log.d(tag, "onBindViewHolder")
 
         val movie = item as Movie
-
         (viewHolder as ViewHolder)!!.useMovie(movie)
+
     }
 
     override fun onUnbindViewHolder(viewHolder: Presenter.ViewHolder?) {
-        Log.d(tag, "onUnbindViewHolder")
+
     }
 
     inner class ViewHolder(view: View) : Presenter.ViewHolder(view) {

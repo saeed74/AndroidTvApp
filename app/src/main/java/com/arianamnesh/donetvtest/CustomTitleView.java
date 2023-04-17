@@ -25,9 +25,6 @@ import android.widget.TextView;
 
 import androidx.leanback.widget.TitleViewAdapter;
 
-/**
- * Custom title view to be used in {@link androidx.leanback.app.BrowseFragment}.
- */
 public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.Provider {
     private final TextView mTitleView;
     private final View mAnalogClockView;
@@ -57,12 +54,6 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
 
         @Override
         public void updateComponentsVisibility(int flags) {
-            /*if ((flags & BRANDING_VIEW_VISIBLE) == BRANDING_VIEW_VISIBLE) {
-                updateBadgeVisibility(true);
-            } else {
-                mAnalogClockView.setVisibility(View.GONE);
-                mTitleView.setVisibility(View.GONE);
-            }*/
 
             int visibility = (flags & SEARCH_VIEW_VISIBLE) == SEARCH_VIEW_VISIBLE
                     ? View.VISIBLE : View.INVISIBLE;
@@ -105,7 +96,6 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
             mImageView.setVisibility(View.VISIBLE);
         }
     }
-
 
     public void setBadgeDrawable(Drawable drawable) {
         if (drawable != null) {

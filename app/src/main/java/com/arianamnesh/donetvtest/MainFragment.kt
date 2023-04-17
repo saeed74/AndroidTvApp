@@ -16,16 +16,13 @@ private const val GRID_ITEM_WIDTH = 300
 private const val GRID_ITEM_HEIGHT = 200
 
 class MainFragment : BrowseSupportFragment() {
-    private val TAG = "MainFragment"
+
     private var _rowsAdapter: ArrayObjectAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        Log.i(TAG, "onViewCreated")
         setupUIElements()
         loadRows()
-
 
     }
 
@@ -56,7 +53,6 @@ class MainFragment : BrowseSupportFragment() {
                     "Title $movieId",
                     "Studio $movieId"
                 )
-
                 gridRowAdapter.add(movie)
             }
 
