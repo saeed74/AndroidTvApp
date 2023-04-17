@@ -24,7 +24,7 @@ class MainFragment : BrowseSupportFragment() {
 
         headersState = HEADERS_HIDDEN
 
-        title = "سلام"
+        title = "دان\u200Cتی\u200Cوی"
 
         isHeadersTransitionOnBackEnabled = true
 

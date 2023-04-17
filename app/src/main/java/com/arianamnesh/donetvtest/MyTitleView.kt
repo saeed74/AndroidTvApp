@@ -65,6 +65,7 @@ class MyTitleView @JvmOverloads constructor(
     fun setTitle(title: CharSequence?) {
         if (title != null) {
             mTitleView.text = title
+            mTitleView.alpha = 1f
             mTitleView.visibility = VISIBLE
             mAnalogClockView.visibility = VISIBLE
             mImageView.visibility = VISIBLE

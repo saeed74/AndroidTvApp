@@ -12,8 +12,8 @@ import androidx.leanback.widget.Presenter
 
 class MoviePresenter : Presenter() {
 
-    private val imgWidth = 110 //dp
-    private val imgHeight = 170 //dp
+    private val imgWidth = 150 //dp
+    private val imgHeight = 200 //dp
 
     private var context: Context? = null
 
