@@ -8,28 +8,19 @@ import android.view.View
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.leanback.app.BrowseFragment
+import androidx.leanback.app.BrowseSupportFragment
 
 import androidx.leanback.widget.*
 
 private const val GRID_ITEM_WIDTH = 300
 private const val GRID_ITEM_HEIGHT = 200
 
-class MainFragment : BrowseFragment() {
+class MainFragment : BrowseSupportFragment() {
     private val TAG = "MainFragment"
     private var _rowsAdapter: ArrayObjectAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //val toastViewGroup = LayoutInflater.from(context).inflate(R.layout.custom_tite_view, null)
-        //val textView: TextView = toastViewGroup.findViewById(R.id.title_tv)
-        //textView.text = "The time is currently ${Calendar.getInstance().time}"
-//        val toast = Toast(context)
-//
-//        toast.setGravity(Gravity.BOTTOM or Gravity.RIGHT, 0, 0)
-//        toast.duration = Toast.LENGTH_LONG
-//        toast.view = toastViewGroup
-//        toast.show()
 
         Log.i(TAG, "onViewCreated")
         setupUIElements()
@@ -41,18 +32,6 @@ class MainFragment : BrowseFragment() {
     private fun setupUIElements() {
 
         title = "my title!! is here"
-
-//        val toastViewGroup = LayoutInflater.from(context).inflate(R.layout.custom_toast, null)
-//        installTitleView(LayoutInflater.from(context),
-//            toastViewGroup as ViewGroup?,b)
-
-        //val toastViewGroup = LayoutInflater.from(context).inflate(R.layout.title_view, null)
-
-        //val customTitleView = LayoutInflater.from(activity).inflate(R.layout.title_view, null) as RelativeLayout
-
-        // Set the custom title view as the title view for the fragment
-        //titleView = customTitleView
-
 
         headersState = HEADERS_ENABLED
         isHeadersTransitionOnBackEnabled = true
